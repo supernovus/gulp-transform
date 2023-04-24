@@ -1,4 +1,4 @@
-# gulp-transform
+# @lumjs/gulp-transform
 
 [![version][versionBadge]][npm]
 [![build][buildBadge]][build]
@@ -8,12 +8,20 @@
 A [Gulp][gulp] plugin for applying custom transformations to the contents of
 files.
 
+## About this fork
+
+This is a fork of the original [gulp-transform](https://github.com/mcmath/gulp-transform) with *Teamop's* [replace-gulp-util](https://github.com/Teamop/gulp-transform/tree/replace-gulp-util) pull request applied, and the version number bumped a bit. I've placed it into my `@lumjs` namespace to avoid any conflicts with the original package, but seeing as that package has not been updated since 2017, and there's been pull requests ignored since 2018, I think it's safe to say it's abandoned.
+
+In a future update, I am planning to update the versions of **all** dependencies, but that will be a much bigger task. In addition to working around several major version upgrades, the upgrade process itself will be a major pain thanks to the unfathomable decisions of the *DefinitelyTyped* maintainers that caused [major backwards-compatibility breakage](https://github.com/DefinitelyTyped/DefinitelyTyped/issues/64266), and has joined the list of utterly absurd open-source clusterfucks I've witnessed in the past three decades of working in the IT industry.
+
+When I finally get this fully updated, I will bump the major version number.
+
 ## Install
 
 Install via [npm][npm]:
 
 ```sh
-npm install --save-dev gulp gulp-transform
+npm install --save-dev gulp @lumjs/gulp-transform
 ```
 
 ## Usage
@@ -28,7 +36,7 @@ are not modified.
 
 ```js
 const gulp = require('gulp');
-const transform = require('gulp-transform');
+const transform = require('@lumjs/gulp-transform');
 const path = require('path');
 
 const TIMESTAMP = Date();
@@ -75,7 +83,7 @@ returns a [Promise][promise] since the operation is asynchronous.
 
 ```js
 const gulp = require('gulp');
-const transform = require('gulp-transform');
+const transform = require('@lumjs/gulp-transform');
 const rename = require('gulp-rename');
 const xml2js = require('xml2js');
 
@@ -244,7 +252,7 @@ npm i -D typescript ts-node gulp @types/gulp gulp-transform
 
 ```ts
 import gulp = require("gulp");
-import transform = require("gulp-transform");
+import transform = require("@lumjs/gulp-transform");
 
 gulp.task("build", () => {
   gulp.src("src/**/*")
